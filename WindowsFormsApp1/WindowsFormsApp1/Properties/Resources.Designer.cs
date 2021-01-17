@@ -63,9 +63,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _220px_File_Explorer_fluent_icon {
+        internal static System.Drawing.Bitmap archivos {
             get {
-                object obj = ResourceManager.GetObject("220px-File-Explorer-fluent-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("archivos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _220px_File_Explorer_fluent_icon1 {
+        internal static System.Drawing.Bitmap carpetas {
             get {
-                object obj = ResourceManager.GetObject("220px-File-Explorer-fluent-icon1", resourceCulture);
+                object obj = ResourceManager.GetObject("carpetas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,29 +83,9 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _220px_Text_txt_svg {
+        internal static System.Drawing.Bitmap dispositivos {
             get {
-                object obj = ResourceManager.GetObject("220px-Text-txt.svg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _7 {
-            get {
-                object obj = ResourceManager.GetObject("7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _71 {
-            get {
-                object obj = ResourceManager.GetObject("71", resourceCulture);
+                object obj = ResourceManager.GetObject("dispositivos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

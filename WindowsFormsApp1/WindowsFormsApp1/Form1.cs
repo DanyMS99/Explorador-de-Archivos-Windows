@@ -24,13 +24,14 @@ namespace WindowsFormsApp1
         bool btn_archivo = false;
         bool btn_carpeta = false;
 
-
+        
         public Form1()
         {
             InitializeComponent();
             DispositivosConectados();
-          
+            
         }
+        
 
         public void DispositivosConectados()
         {
@@ -66,7 +67,7 @@ namespace WindowsFormsApp1
             button5.Visible = false;
             button6.Visible = false;
             groupBox1.Text = "Dispositivos";
-            textBox3.Visible = false;
+            textBox3.Visible = true;
             richTextBox1.Visible = false;
         }
         /*FIN DISPOSITIVOS
@@ -240,6 +241,27 @@ namespace WindowsFormsApp1
                                     textBox3.Text = "";
                                     richTextBox1.Visible = false;
                                 }
+                                else
+                                {
+                                    if (comboBox1.SelectedIndex == 5)//ocultar
+                                    {
+                                        textBox1.Text = "/";
+                                        textBox2.Text = "/";
+                                        listBox1.Visible = false;
+                                        comboBox1.Visible = true;
+                                        label1.Visible = true;
+                                        label1.Text = "Seleccione la ruta";
+                                        textBox1.Visible = true;
+                                        label2.Visible = false;
+                                        button4.Visible = true;
+                                        textBox2.Visible = false;
+                                        button5.Visible = false;
+                                        button6.Location = new Point(124, 142);
+                                        button6.Visible = true;
+                                        textBox3.Text = "";
+                                        richTextBox1.Visible = false;
+                                    }
+                                }
                             }
                         }
                     }
@@ -354,6 +376,48 @@ namespace WindowsFormsApp1
                                         button6.Visible = true;
                                         textBox3.Text = "";
                                     }
+                                    else
+                                    {
+                                        if (comboBox1.SelectedIndex == 4)//eliminar 1
+                                        {
+                                            textBox1.Text = "/";
+                                            textBox2.Text = "/";
+                                            listBox1.Visible = false;
+                                            comboBox1.Visible = true;
+                                            label1.Visible = true;
+                                            label1.Text = "Seleccione la ruta";
+                                            textBox1.Visible = true;
+                                            label2.Visible = false;
+                                            button4.Visible = true;
+                                            textBox2.Visible = false;
+                                            button5.Visible = false;
+                                            button6.Location = new Point(124, 142);
+                                            button6.Visible = true;
+                                            textBox3.Text = "";
+                                            richTextBox1.Visible = false;
+                                        }
+                                        else
+                                        {
+                                            if (comboBox1.SelectedIndex == 5)//ocultar
+                                            {
+                                                textBox1.Text = "/";
+                                                textBox2.Text = "/";
+                                                listBox1.Visible = false;
+                                                comboBox1.Visible = true;
+                                                label1.Visible = true;
+                                                label1.Text = "Seleccione la ruta";
+                                                textBox1.Visible = true;
+                                                label2.Visible = false;
+                                                button4.Visible = true;
+                                                textBox2.Visible = false;
+                                                button5.Visible = false;
+                                                button6.Location = new Point(124, 142);
+                                                button6.Visible = true;
+                                                textBox3.Text = "";
+                                                richTextBox1.Visible = false;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -406,15 +470,24 @@ namespace WindowsFormsApp1
                                     textBox1.Text = path;
                                     textBox3.Text = path;
                                 }
+                                else
+                                {
+                                    if (comboBox1.SelectedIndex == 5)
+                                    {
+                                        seleccionarPath();
+                                        textBox1.Text = path;
+                                        textBox3.Text = path;
+                                    }
+                                }
                             }
                         }
                     }
+
                 }
-               
             }
             else
             {
-                if (btn_archivo== true)
+                if (btn_archivo == true)
                 {
                     if (comboBox1.SelectedIndex == 0)
                     {
@@ -441,7 +514,7 @@ namespace WindowsFormsApp1
                                 if (comboBox1.SelectedIndex == 3)
                                 {
                                     origenArchivo(textBox1);
-                                    
+
                                     textBox3.Text = path;
                                 }
                                 else
@@ -451,11 +524,21 @@ namespace WindowsFormsApp1
                                         origenArchivo(textBox1);
                                         textBox3.Text = path;
                                     }
+                                    else
+                                    {
+                                        if (comboBox1.SelectedIndex == 5)
+                                        {
+                                            origenArchivo(textBox1);
+                                            textBox1.Text = path;
+                                            textBox3.Text = path;
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            
             }
 
         }
@@ -589,6 +672,15 @@ namespace WindowsFormsApp1
                                     Directory.Delete(path);
                                     MessageBox.Show("La carpeta ha sido eliminada");
                                 }
+                                else
+                                {
+                                    if (comboBox1.SelectedIndex == 5)
+                                    {
+                                        FileAttributes attributes = File.GetAttributes(path);
+                                        File.SetAttributes(path, File.GetAttributes(path) | FileAttributes.Hidden);
+                                        MessageBox.Show("El archivo esta oculto");
+                                    }
+                                }
                             }
                         }
                     }
@@ -640,6 +732,15 @@ namespace WindowsFormsApp1
                                     {
                                         File.Delete(path);
                                         MessageBox.Show("El archivo ha sido borrado");
+                                    }
+                                    else
+                                    {
+                                        if (comboBox1.SelectedIndex == 5)
+                                        {
+                                            FileAttributes attributes = File.GetAttributes(path);
+                                            File.SetAttributes(path, File.GetAttributes(path) | FileAttributes.Hidden);
+                                            MessageBox.Show("El archivo esta oculto");
+                                        }
                                     }
                                 }
                             }
